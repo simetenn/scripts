@@ -11,7 +11,7 @@ def blank(pdf):
         cmdstring += " A{page}-{page} B1-1".format(page=page)
 
 
-    cmd = "pdftk A={pdffile} B=blank.pdf cat {cmdstring} output {pdffile}-blank.pdf".format(pdffile=pdf, cmdstring=cmdstring)
+    cmd = "pdftk A={pdffile} B=blank.pdf cat {cmdstring} output {pdffile_core}-blank.pdf".format(pdffile=pdf, cmdstring=cmdstring, pdffile_core=pdf.split(".")[0])
 
     system(cmd)
 
